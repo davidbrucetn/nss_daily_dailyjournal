@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/journal.css">
+
+</head>
+<body>
+    <header class="body__header">
+        <h1>Daily Journal</h1>
+        <img class="banner__logo__right" src="images/header-right-ink-crow.png">
+    </header>
+    <main class="main  body__main">
+       
+        <div class="body__main__left">
+        
+            <form action="" class="form main__form">
+                <fieldset class="field__input">
+                    <label for="journalDate">Date of entry</label>
+                    <input type="date" name="journalDate" id="journalDate">
+                </fieldset>
+                <fieldset class="field__input">
+                    <label for=" journalConcepts">Concepts covered</label>
+        
+                    <input type="text" name="journalConcepts" id="journalConcepts">
+                </fieldset>
+                <fieldset class="field__input">
+                    <label for=" journalEntry">Journal entry</label>
+        
+                    <input type="text" name="journalEntry" id="journalEntry">
+                </fieldset>
+                <fieldset class="field__input">
+                    <label for=" journalMood">Mood for the day</label>
+                    <select id="journalMood" class="select__box">
+                        <option value="1">Ecstatic</option>
+                        <option value="2">Happy</option>
+                        <option value="3">Content</option>
+                        <option value="4">Frustrated</option>
+                        <option value="5">Tired</option>
+                    </select>
+                </fieldset>
+                <fieldset class="field__input">
+                    <input type=" submit" value="Record Journal Entry">
+                </fieldset>
+            </form>
+        
+            <div class="entrylog__container">
+                <h3>Entry Log</h3>
+                <article class="article__entrylog">
+        
+        
+                </article>
+            </div>
+        </div>
+
+        <div class="body__main__right">
+            <img src="images/ravens_right.png">
+        </div>
+
+        </main>
+        <footer class="body__footer">
+            <h5>Nashville Software School - David W. Bruce</h5>
+            
+            <img class="footer__logo__right" src="images/header-right-ink-crow.png">
+        </footer>
+    <script src="scripts/journalData.js"></script>
+    <script src="scripts/journal.js">
+
+    </script>
+</body>
+</html>
