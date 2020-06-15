@@ -1,0 +1,25 @@
+{
+    "journal": [
+        {
+            "id": 1,
+            "date": "06/02/2020",
+            "concept": "JavaScript",
+            "entry": "First time using JavaScript.",
+            "mood": "Ecstatic"
+        },
+        {   
+            "id": 2,
+            "date": "06/03/2020",
+            "concept": "JavaScript Objects",
+            "entry": "Using JavaScript Objects",
+            "mood": "Ecstatic"
+        },
+        {
+            "id": 3,
+            "date": "06/04/2020",
+            "concept": "JavaScript JSON Functions",
+            "entry": "Using JSON Data",
+            "mood": "Ecstatic"
+        }
+    ]
+}
