@@ -1,5 +1,5 @@
-import makeJournalEntryComponent from './entryComponent.js';
-import { journalEntries } from './entryProvider.js';
+import { makeJournalEntryComponent } from './entryComponent.js';
+import { journalEntries } from './data.js';
 /*
  *     Purpose: To render all journal entries to the DOM
  *
@@ -18,6 +18,19 @@ const renderJournalEntries = () => {
 }
 */
 
+document.querySelector("#recordEntry").addEventListener("click", event => {
+    /*
+        Collect the user put by selecting the input fields, one
+        at a time, and accessing the `value` property
+    */
+   // call to API.saveEntry
+
+    
+
+})
+
+
 const renderJournalEntries = () => journalEntries.forEach(journalEntry => document.querySelector(".article__entrylog").innerHTML += makeJournalEntryComponent(journalEntry))
 
 export default renderJournalEntries;
+

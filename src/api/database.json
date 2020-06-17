@@ -1,4 +1,26 @@
 {
+    "mood": [
+    {
+      "id": 1,
+      "mood": "Ecstatic"
+    },
+    {
+      "id": 2,
+      "mood": "Happy"
+    },
+    {
+       "id": 3,
+      "mood": "Content"
+
+    }, 
+    {
+      "id": 4,
+      "mood": "Frustrated"
+    },
+    {
+      "id": 5,
+      "mood": "Tired"
+    }],
     "journal": [
         {
             "id": 1,

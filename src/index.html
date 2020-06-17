@@ -33,17 +33,13 @@
                     <input type="text" name="journalEntry" id="journalEntry">
                 </fieldset>
                 <fieldset class="field__input">
-                    <label for=" journalMood">Mood for the day</label>
-                    <select id="journalMood" class="select__box">
-                        <option value="1">Ecstatic</option>
-                        <option value="2">Happy</option>
-                        <option value="3">Content</option>
-                        <option value="4">Frustrated</option>
-                        <option value="5">Tired</option>
+                    <label for=" mood__dropdown">Mood for the day</label>
+                    <select id="mood__dropdown" class="select__box">
+                        <!-- populated by API.getMoodChoices() -->
                     </select>
                 </fieldset>
                 <fieldset class="field__input">
-                    <input type=" submit" value="Record Journal Entry">
+                    <input id="recordEntry" type=" submit" value="Record Journal Entry">
                 </fieldset>
             </form>
             <pre id="output"></pre>
