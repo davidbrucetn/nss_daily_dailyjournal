@@ -1,4 +1,4 @@
-import { API } from './entryProvider.js';
+import { API } from './data.js';
 import renderJournalEntries from './entryList.js';
 
 /*
@@ -17,7 +17,7 @@ import renderJournalEntries from './entryList.js';
 */
 
 //getJournalEntries().then(renderJournalEntries);
-
+API.getMoodChoices()
 API.getJournalEntries().then(renderJournalEntries)
 /*
 API.getJournalEntries() 

@@ -5,15 +5,15 @@
     Arguments: journalEntry (object)
 */
 
-/*
-getJSONElementName = ( formFieldName ) => {
+
+const getJSONElementName = ( formFieldName ) => {
     let jsonFieldName = formFieldName
     jsonFieldName = jsonFieldName.split("journal",1)
     jsonFieldName = jsonFieldName.toLowerCase 
     return jsonFieldName
     
 }
-const makeJSONString = (form) => {
+const makeJSONString = () => {
     var formObject = {};
     var formElements = form.querySelectorAll( "input, select" );
     for ( i=0; i< formElements.length; i++ ) {
@@ -25,10 +25,10 @@ const makeJSONString = (form) => {
             formObject[ name ] = value;
         }
     }
-    console.log( formObject )
+    return formObject;
 
 }
-*/
+
 
 const makeJournalEntryComponent = (journalEntryObj) => `
 <section class="journal__section">
@@ -43,4 +43,4 @@ const makeJournalEntryComponent = (journalEntryObj) => `
 </section>`
 
 
-export default makeJournalEntryComponent;
+export { makeJSONString, makeJournalEntryComponent };
