@@ -1,3 +1,4 @@
+import renderJournalEntries from './entryList.js';
 /*
     Define the keys and value for a JavaScript object that
     represents a journal entry about what you learned today
@@ -11,18 +12,18 @@ const journalEntry = {
     represents a journal entry about what you learned today
 
 */
-    let journalEntries = []
+
 
 
 const API = {
     // Populate Saved Journal Entries
-    getJournalEntries () {
+    getJournalEntries: () => {
         return fetch("http://localhost:8088/journal")
             .then(journalHttpResponseString => journalHttpResponseString.json())
-            .then( (arrayOfJournalEntries) => journalEntries = arrayOfJournalEntries)
     },
+
     // Populate select dropdown for mood options
-    getMoodChoices () {
+    getMoodChoices: () => {
         const moodDropdown = document.getElementById("mood__dropdown");
         moodDropdown.length = 0;
         let defaultOption = document.createElement('option');
@@ -38,11 +39,12 @@ const API = {
                     option = document.createElement('option');
                     option.text = moodArray[i].mood;
                     option.value = moodArray[i].id;
-                    moodDropdown.add(option)
+                    moodDropdown.add(option);
                 }
             }) 
             
     },
+
     // save journal entry
     saveJournalEntry: (newEntryObject) => {
         return fetch("http://localhost:8088/journal", {
@@ -50,9 +52,9 @@ const API = {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(makeJSONString)
-        })
+            body: JSON.stringify(newEntryObject)
+        }).then(response => response.json());
     }
 }
 
-export { journalEntry, journalEntries, API };
+export default API;

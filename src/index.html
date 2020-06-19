@@ -17,20 +17,20 @@
        
         <div class="body__main__left">
         
-            <form action="" class="form main__form" >
+            <form action="" class="form main__form" id="formNewEntry">
                 <fieldset class="field__input">
                     <label for="journalDate">Date of entry</label>
-                    <input type="date" name="journalDate" id="journalDate">
+                    <input type="date" name="journalDate" id="journalDate-input">
                 </fieldset>
                 <fieldset class="field__input">
                     <label for=" journalConcepts">Concepts covered</label>
         
-                    <input type="text" name="journalConcepts" id="journalConcepts">
+                    <input type="text" name="journalConcepts" id="journalConcepts-input">
                 </fieldset>
                 <fieldset class="field__input">
                     <label for=" journalEntry">Journal entry</label>
         
-                    <input type="text" name="journalEntry" id="journalEntry">
+                    <input type="text" name="journalEntry" id="journalEntry-input">
                 </fieldset>
                 <fieldset class="field__input">
                     <label for=" mood__dropdown">Mood for the day</label>
@@ -39,7 +39,7 @@
                     </select>
                 </fieldset>
                 <fieldset class="field__input">
-                    <input id="recordEntry" type=" submit" value="Record Journal Entry">
+                    <input id="recordEntry" type="button" value="Record Journal Entry">
                 </fieldset>
             </form>
             <pre id="output"></pre>
