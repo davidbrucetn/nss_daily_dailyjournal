@@ -1,5 +1,7 @@
-import { API } from './data.js';
+import API from './data.js';
 import renderJournalEntries from './entryList.js';
+import makeNewEntry from './createEntry.js'
+
 
 /*
     Main application logic that uses the functions and objects
@@ -9,30 +11,46 @@ import renderJournalEntries from './entryList.js';
     to get the data and display it.
 */
 // Initial Entry Log Invocation getJournalEntries from JSON, then render
-/*getJournalEntries().then(
-    () => {
-        renderJournalEntries()
-    }
-)
-*/
 
-//getJournalEntries().then(renderJournalEntries);
 API.getMoodChoices()
-API.getJournalEntries().then(renderJournalEntries)
-/*
-API.getJournalEntries() 
-    .then(() => renderJournalEntries())
-/*
-document.forms["journalEntryForm"].submit();
+renderJournalEntries()
 
-document.addEventListener( "DOMContentLoaded", function() ) {
-    var form = document.getElementsByClassName("main__form");
-    var output = document.getElementById("output");
-    form.addEventListener( "submit", function( e ) {
-        e.preventDefault();
-        var json = makeJSONString( this );
-        output.innerHTML = json;
-    }, false);
+
+const addJournalEntry = (entryObj) => {
+    API.saveJournalEntry(entryObj)
+        .then(() => {
+            renderJournalEntries();
+        })
 }
-*/
-//addJourneyEntry();
+
+
+
+const saveEntry = () => {
+    //find mood dropdown
+    const selectMood = document.getElementById('mood__dropdown');
+    //Get values
+    const entryDate = document.getElementById('journalDate-input').value;
+    const entryConcept = document.getElementById('journalConcepts-input').value;
+    const entryText = document.getElementById('journalEntry-input').value;
+    const entryMood = selectMood.options[selectMood.selectedIndex].text;
+    //create object w/factory function
+    let entry = makeNewEntry( entryDate, entryConcept, entryText, entryMood );
+        
+    //function call for API Post and refesh
+    addJournalEntry(entry);
+}
+
+
+function logSubmit(event) {
+    
+    saveEntry();
+}
+
+let recordEntry = document.getElementById('recordEntry')
+recordEntry.addEventListener('click', logSubmit);
+
+
+
+
+
+

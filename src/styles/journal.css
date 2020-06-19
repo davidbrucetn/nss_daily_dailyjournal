@@ -93,6 +93,7 @@ input, select {
   }
   
 .entrylog__container {
+  flex: 3.5;
   background-color: #44566c;
   border-radius: 5px;
   padding: .5vh 0 .5vw .5vw;
@@ -101,7 +102,9 @@ input, select {
 }
 .article__entrylog {
    display: flex;
+   flex: 3.5;
    justify-content: space-between;
+   flex-flow: wrap;
    background-color: #4b5e65;
     padding:0.01em 16px;
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
@@ -109,7 +112,7 @@ input, select {
  }
 
 .journal__section {
-  flex: 0 0 30%;
+  flex: 0 0 25%;
   box-sizing: border-box;
   box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
 }

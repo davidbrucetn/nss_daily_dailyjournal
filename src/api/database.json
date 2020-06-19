@@ -1,5 +1,5 @@
 {
-    "mood": [
+  "mood": [
     {
       "id": 1,
       "mood": "Ecstatic"
@@ -9,10 +9,9 @@
       "mood": "Happy"
     },
     {
-       "id": 3,
+      "id": 3,
       "mood": "Content"
-
-    }, 
+    },
     {
       "id": 4,
       "mood": "Frustrated"
@@ -20,28 +19,29 @@
     {
       "id": 5,
       "mood": "Tired"
-    }],
-    "journal": [
-        {
-            "id": 1,
-            "date": "06/02/2020",
-            "concept": "JavaScript",
-            "entry": "First time using JavaScript.",
-            "mood": "Ecstatic"
-        },
-        {   
-            "id": 2,
-            "date": "06/03/2020",
-            "concept": "JavaScript Objects",
-            "entry": "Using JavaScript Objects",
-            "mood": "Ecstatic"
-        },
-        {
-            "id": 3,
-            "date": "06/04/2020",
-            "concept": "JavaScript JSON Functions",
-            "entry": "Using JSON Data",
-            "mood": "Ecstatic"
-        }
-    ]
+    }
+  ],
+  "journal": [
+    {
+      "date": "2020-06-19",
+      "concept": "testing with debugger",
+      "entry": "entry for debugger run",
+      "mood": "Frustrated",
+      "id": 1
+    },
+    {
+      "date": "2020-06-19",
+      "concept": "Test concept",
+      "entry": "test entry",
+      "mood": "Happy",
+      "id": 2
+    },
+    {
+      "date": "2020-06-19",
+      "concept": "Testing with changes",
+      "entry": "test",
+      "mood": "Happy",
+      "id": 6
+    }
+  ]
 }
