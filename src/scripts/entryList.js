@@ -21,7 +21,7 @@ const renderJournalEntries = (filterType,filterValue) => {
 
         if (filterType == null) {
             journalArray.forEach(journalEntry => {
-                journalEntry.mood = getMood(journalEntry.mood)
+                // journalEntry.mood = getMood(journalEntry.mood)
                 journalContainer.innerHTML += makeJournalEntryComponent("ACTIVE",journalEntry)
             });
             registerEventListener.registerEventListener();
@@ -30,7 +30,7 @@ const renderJournalEntries = (filterType,filterValue) => {
         if (filterType === "mood") {
             const moodArray = journalArray.filter((journalEntry) => {return journalEntry.mood === filterValue });
             moodArray.forEach(journalEntry => {
-                journalEntry.mood = getMood(journalEntry.mood)
+                // journalEntry.mood = getMood(journalEntry.mood)
                 journalContainer.innerHTML += makeJournalEntryComponent("ACTIVE",journalEntry)
                 registerEventListener.registerEventListener();
             });

@@ -85,17 +85,17 @@ saveButton.addEventListener("click", event => {
         const entryMood = entryMoodDropdown.options[entryMoodDropdown.selectedIndex].value;
         const editEntryObject = makeNewEntry( entryDate, entryConcept, entryText, entryMood );
         API.updateEntry(entryId,editEntryObject)
-            .then((response) => { 
-                if (response.ok === true) {
-                    toggleEditFields();
-                    renderJournalEntries();
-                }
+            .then(() => {
+                toggleEditFields();
+                document.querySelectorAll('.input__text').forEach((editElement) => {
+                    editElement.value="";
+                });
+                document.getElementById('mood__dropdown').selectedIndex = 0;
+                renderJournalEntries();
             })
-    } else {
-        //save functionality goes here
-    }
-    
 
+            
+    }
 })
 
 

@@ -1,5 +1,5 @@
 {
-  "mood": [
+  "moods": [
     {
       "id": 1,
       "mood": "Ecstatic"
@@ -26,15 +26,22 @@
       "date": "2020-06-16",
       "concept": "test",
       "entry": "test",
-      "mood": "1",
+      "moodId": "2",
       "id": 1
     },
     {
       "date": "2020-06-03",
       "concept": "concepts of array methods",
       "entry": "Testing new code",
-      "mood": "1",
+      "moodId": "1",
       "id": 2
+    },
+    {
+      "date": "2020-06-24",
+      "concept": "json relationships",
+      "entry": "Updating journal for mood join in get",
+      "moodId": "2",
+      "id": 3
     }
   ]
 }

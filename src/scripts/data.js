@@ -15,16 +15,22 @@ const journalEntry = {
 */
 
 const urlJournal = "http://localhost:8088/journal";
-const urlMood = "http://localhost:8088/mood";
+const urlMood = "http://localhost:8088/moods";
 
 const API = {
     // Populate Saved Journal Entries
     getJournalEntries: () => {
-        return fetch(urlJournal)
-            .then(journalHttpResponseString => journalHttpResponseString.json())
+        return fetch(`${urlJournal}?_expand=mood`)
+            .then(response => {
+                if (response.ok ) {
+                    return response.json();
+                } else {
+                    return Promise.reject({ status: response.status, statusText: response.statusText})
+                }
+            })
     },
     getSingleEntry: (entryId) => {
-        return fetch(`${urlJournal}/${entryId}`)
+        return fetch(`${urlJournal}/${entryId}/?_expand=mood`)
             .then(response => response.json())
     },
     getMoodChoices: () => {
@@ -88,7 +94,9 @@ const API = {
             headers: {
                 "Content-Type": "application/json"
             },
-            body:  JSON.stringify(updatedEntryObject)  });
+            body:  JSON.stringify(updatedEntryObject)  })
+            .then(response => response.json());
+                
     }
 }
 
