@@ -14,49 +14,60 @@
         <img class="banner__logo__right" src="images/header-right-ink-crow.png">
     </header>
     <main class="main  body__main">
-       
+    
         <div class="body__main__left">
-        
+    
             <form action="" class="form main__form" id="formNewEntry">
+                <fieldset class="field__input__edit hidden">
+                    <label for="entryId">Edit Entry ID</label>
+                    <input type="text" name="entryId" id="entryId" READONLY />
+                </fieldset>
                 <fieldset class="field__input">
                     <label for="journalDate">Date of entry</label>
                     <input type="date" name="journalDate" id="journalDate-input">
                 </fieldset>
                 <fieldset class="field__input">
                     <label for=" journalConcepts">Concepts covered</label>
-        
+    
                     <input type="text" name="journalConcepts" id="journalConcepts-input">
                 </fieldset>
                 <fieldset class="field__input">
                     <label for=" journalEntry">Journal entry</label>
-        
+    
                     <input type="text" name="journalEntry" id="journalEntry-input">
                 </fieldset>
                 <fieldset class="field__input">
-                    <label for=" mood__dropdown">Mood for the day</label>
+                    <label for="mood__dropdown">Mood for the day</label>
                     <select id="mood__dropdown" class="select__box">
                         <!-- populated by API.getMoodChoices() -->
                     </select>
                 </fieldset>
                 <fieldset class="field__input">
                     <input id="recordEntry" type="button" value="Record Journal Entry">
+                    <input class="hidden" id="updateEntry" type="button" value="Save Edit Entry">
                 </fieldset>
             </form>
             <pre id="output"></pre>
             <div class="entrylog__container">
-                <h3>Entry Log</h3>
-                <article class="article__entrylog">
-        
-        
+                <div class="entrylog__header">
+                    <h3>Entry Log</h3>
+                    <div class="entrylog__container__buttons">
+                        <label for="mood__dropdown__filter"></label>
+                        <select id="mood__dropdown__filter" class="select__box"></select>
+                    </div>
+                </div>
+                <article id="article__entrylog--active" class="article__entrylog--active">
+    
+    
                 </article>
             </div>
         </div>
-
+    
         <div class="body__main__right">
             <img src="images/ravens_right.png">
         </div>
-
-        </main>
+    
+    </main>
         <footer class="body__footer">
             <h5>Nashville Software School - David W. Bruce</h5>
             

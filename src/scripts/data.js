@@ -1,4 +1,5 @@
-import renderJournalEntries from './entryList.js';
+import renderJournalEntries from "./entryList.js";
+
 /*
     Define the keys and value for a JavaScript object that
     represents a journal entry about what you learned today
@@ -13,47 +14,81 @@ const journalEntry = {
 
 */
 
-
+const urlJournal = "http://localhost:8088/journal";
+const urlMood = "http://localhost:8088/mood";
 
 const API = {
     // Populate Saved Journal Entries
     getJournalEntries: () => {
-        return fetch("http://localhost:8088/journal")
+        return fetch(urlJournal)
             .then(journalHttpResponseString => journalHttpResponseString.json())
     },
-
-    // Populate select dropdown for mood options
+    getSingleEntry: (entryId) => {
+        return fetch(`${urlJournal}/${entryId}`)
+            .then(response => response.json())
+    },
     getMoodChoices: () => {
-        const moodDropdown = document.getElementById("mood__dropdown");
-        moodDropdown.length = 0;
-        let defaultOption = document.createElement('option');
-        defaultOption.text = "Select a Mood";
-        moodDropdown.add(defaultOption);
-        moodDropdown.selectedIndex = 0;
-
-        return fetch("http://localhost:8088/mood")
+        return fetch(urlMood)
             .then(moodHttpResponseString => moodHttpResponseString.json())
-            .then(function(moodArray) {
+    },
+    // Populate select dropdown for mood options
+    setMoodChoices: () => {
+        const moodListArray = [];
+        const moodDropdown = document.getElementById("mood__dropdown");
+        const filterMoodDropdown = document.getElementById("mood__dropdown__filter")
+        const dropdowns = [ moodDropdown, filterMoodDropdown ]
+        dropdowns.forEach((button) => {
+            button.length = 0;
+            let defaultOption = document.createElement('option');
+            if ( button === document.getElementById("mood__dropdown") )  { 
+                defaultOption.text = "Select a Mood"; 
+            } else { defaultOption.text = "Filter By Mood"; }
+            button.add(defaultOption);
+            button.selectedIndex = 0;
+            return fetch(urlMood)
+            .then(moodHttpResponseString => moodHttpResponseString.json())
+            .then((moodArray) => {
                 let option;
                 for (let i=0; i < moodArray.length; i++) {
                     option = document.createElement('option');
                     option.text = moodArray[i].mood;
                     option.value = moodArray[i].id;
-                    moodDropdown.add(option);
-                }
-            }) 
+                    button.add(option);
+                };
+
+            })
+
+        });
+    },
+    deleteJournalEntry: (entryId) => {
+        return fetch(`${urlJournal}/${entryId}`, {
+            method: "DELETE" })
+                .then(response => {
+                    if (response.ok ) {
+                        return response.json();
+                    } else {
+                        return Promise.reject({ status: response.status, statusText: response.statusText})
+                    }
+                })
             
     },
-
     // save journal entry
     saveJournalEntry: (newEntryObject) => {
-        return fetch("http://localhost:8088/journal", {
+        return fetch(urlJournal, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newEntryObject)
         }).then(response => response.json());
+    },
+    updateEntry: (entryId, updatedEntryObject) => {
+        return fetch(`${urlJournal}/${entryId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:  JSON.stringify(updatedEntryObject)  });
     }
 }
 

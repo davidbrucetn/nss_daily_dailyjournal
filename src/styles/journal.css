@@ -100,7 +100,7 @@ input, select {
   box-sizing: border-box;
   box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
 }
-.article__entrylog {
+.article__entrylog--active, .article__entrylog {
    display: flex;
    flex: 3.5;
    justify-content: space-between;
@@ -111,7 +111,7 @@ input, select {
     border-radius: 5px;
  }
 
-.journal__section {
+.journal__section--active, .journal__section {
   flex: 0 0 25%;
   box-sizing: border-box;
   box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
@@ -132,6 +132,32 @@ input, select {
   margin-bottom:10px
  }
 
+ .entrylog__header {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   margin-left: 2vw;
+   flex: 0 0 2.5;
+ }
+ .entrylog__container__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 30%;
+    margin: 1em 1em 1em 1em;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+
+ }
+
+ 
+ .button__entry, .button__filter {
+  margin: .1vh 0 .5vh .5vw;3
+  -webkit-box-shadow: 20 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  /* Firefox 3.5 - 3.6 */
+  box-shadow:        0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  border-radius: 5px;
+ }
+
  .form__save__button {
    margin: 1em 0 0 1.5em;
   -webkit-box-shadow: 2px 2px 4px 5px rgb(87, 101, 145);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
@@ -140,3 +166,6 @@ input, select {
   border-radius: 5px;
  }
  
+ .hidden {
+   display: none;
+ }
