@@ -2,6 +2,7 @@ const toggleEditFields = () => {
     document.querySelectorAll(".field__input__edit").forEach((editElement) => {
         editElement.classList.toggle("hidden")
     });
+    
     document.querySelector("#recordEntry").classList.toggle("hidden")
     document.querySelector("#updateEntry").classList.toggle("hidden")
 }
@@ -20,7 +21,9 @@ const updateFormFields = (entryObject) => {
     entryDate.value = entryObject.date;
     entryConcepts.value = entryObject.concept;
     entryText.value = entryObject.entry;
-    entryMoodDropdown.options[entryMoodDropdown.selectedIndex].text = entryObject.mood;
+    
+    //entryMoodDropdown.options[entryMoodDropdown.selectedIndex].value = entryObject.moodId;
+    entryMoodDropdown.value = entryObject.moodId
 
     toggleEditFields();
 

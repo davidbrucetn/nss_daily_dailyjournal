@@ -27,6 +27,7 @@ export default {
                     .then((entryObject) => { 
                         updateFormFields(entryObject);
                     })
+                    .then((API.getMoodChoices()))
             } // end if statement
         
         }) // end entryContainer event listener function

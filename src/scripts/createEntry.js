@@ -3,7 +3,7 @@ const makeNewEntry = (entryDate, entryConcept, entryText, entryMood) => {
         date: entryDate,
         concept: entryConcept,
         entry: entryText,
-        mood: entryMood
+        moodId: entryMood
     }
     return newEntry;
 }

@@ -20,7 +20,7 @@ const makeJournalEntryComponent = (listName,journalEntryObj) => {
         <div class="content__entrycard">
             <p><strong>Concepts Covered:</strong>  ${journalEntryObj.concept}</p>
             <p><strong>Entry:</strong>  ${journalEntryObj.entry}</p>
-            <p><strong>Mood:</strong>  ${journalEntryObj.mood}</p>
+            <p><strong>Mood:</strong>  ${journalEntryObj.mood.mood}</p>
         </div>
     </div>
     ${deleteButtonHTML}
