@@ -28,7 +28,7 @@ const renderJournalEntries = (filterType,filterValue) => {
         }
         
         if (filterType === "mood") {
-            const moodArray = journalArray.filter((journalEntry) => {return journalEntry.mood === filterValue });
+            const moodArray = journalArray.filter((journalEntry) => {return journalEntry.moodId === filterValue });
             moodArray.forEach(journalEntry => {
                 // journalEntry.mood = getMood(journalEntry.mood)
                 journalContainer.innerHTML += makeJournalEntryComponent("ACTIVE",journalEntry)
