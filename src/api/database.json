@@ -23,25 +23,18 @@
   ],
   "journal": [
     {
-      "date": "2020-06-19",
-      "concept": "testing with debugger",
-      "entry": "entry for debugger run",
-      "mood": "Frustrated",
+      "date": "2020-06-16",
+      "concept": "test",
+      "entry": "test",
+      "mood": "1",
       "id": 1
     },
     {
-      "date": "2020-06-19",
-      "concept": "Test concept",
-      "entry": "test entry",
-      "mood": "Happy",
+      "date": "2020-06-03",
+      "concept": "concepts of array methods",
+      "entry": "Testing new code",
+      "mood": "1",
       "id": 2
-    },
-    {
-      "date": "2020-06-19",
-      "concept": "Testing with changes",
-      "entry": "test",
-      "mood": "Happy",
-      "id": 6
     }
   ]
 }
