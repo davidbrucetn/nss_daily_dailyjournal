@@ -30,18 +30,25 @@
       "id": 1
     },
     {
-      "date": "2020-06-03",
-      "concept": "concepts of array methods",
-      "entry": "Testing new code",
-      "moodId": "1",
+      "date": "2020-06-17",
+      "concept": "Testing delete",
+      "entry": "Testing entry delete",
+      "moodId": "3",
       "id": 2
     },
     {
-      "date": "2020-06-24",
-      "concept": "json relationships",
-      "entry": "Updating journal for mood join in get",
+      "date": "2020-06-17",
+      "concept": "Test concept",
+      "entry": "Test entry",
       "moodId": "2",
       "id": 3
+    },
+    {
+      "date": "2020-06-02",
+      "concept": "Sorting",
+      "entry": "Testing it now",
+      "moodId": "1",
+      "id": 4
     }
   ]
 }

@@ -4,7 +4,7 @@ import { updateFormFields } from './updateForm.js'
 
 const delJournalEntry = (entryObj) => {
     API.deleteJournalEntry(entryObj)
-        .then(response => { 
+        .then((response) => { 
             renderJournalEntries();
         })
         
