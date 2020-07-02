@@ -1,3 +1,6 @@
+//Update form fields with jounrnal entry object values
+// David Bruce
+
 const toggleEditFields = () => {
     document.querySelectorAll(".field__input__edit").forEach((editElement) => {
         editElement.classList.toggle("hidden")

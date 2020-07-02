@@ -1,3 +1,5 @@
+// Register event listenter for Add/Delete/Edit
+// David Bruce
 import API from './data.js'
 import renderJournalEntries from './entryList.js';
 import { updateFormFields } from './updateForm.js'
