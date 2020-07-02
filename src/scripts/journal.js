@@ -1,3 +1,6 @@
+// Main JavaScript Module
+// David Bruce
+
 import API from './data.js';
 import renderJournalEntries from './entryList.js';
 import makeNewEntry from './createEntry.js'
@@ -8,12 +11,10 @@ import { toggleEditFields } from './updateForm.js'
     Main application logic that uses the functions and objects
     defined in the other JavaScript files.
 
-    Change the fake variable names below to what they should be
-    to get the data and display it.
 */
 // Initial Entry Log Invocation getJournalEntries from JSON, then render
 
-
+//Populate Mood Dropdown and Populate Journal Entry Area
 API.setMoodChoices()
 renderJournalEntries()
 
@@ -97,7 +98,3 @@ saveButton.addEventListener("click", event => {
             
     }
 })
-
-
-
-

@@ -1,3 +1,6 @@
+// Create Journal Object from parameters
+// David Bruce
+
 const makeNewEntry = (entryDate, entryConcept, entryText, entryMood) => {
      const newEntry = {
         date: entryDate,

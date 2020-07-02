@@ -1,11 +1,11 @@
+// List Building Module
+// Purpose: To render all journal entries to the DOM
+// David Bruce
+
 import makeJournalEntryComponent from './entryComponent.js';
 import API from './data.js';
 import registerEventListener from './events.js'
-/*
- *     Purpose: To render all journal entries to the DOM
- *
- *         Arguments: entries (array of objects)
- *         */
+
 
  const getMood = (moodId) => {
     return Array.from(document.getElementById("mood__dropdown").options)[moodId].text
